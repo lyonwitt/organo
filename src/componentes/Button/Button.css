@@ -1,0 +1,25 @@
+.button {
+    width: 100%;
+   display: flex;
+}
+
+.button button {
+    width: 20%;
+    padding: .9rem;
+    cursor: pointer;
+}
+
+.button .btn-first {
+    background-color: #928463;
+    border: none;
+    color: #F8F8F8;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: .5rem;
+    transition: ease .3s;
+    margin: 1rem 0;
+}
+
+.button .btn-first:hover {
+    background-color: #262524;
+}

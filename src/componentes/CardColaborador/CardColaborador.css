@@ -1,0 +1,32 @@
+.colaborador {
+    width: 200px;
+    position: relative;
+    box-shadow: 0 10px 10px 0 rgb(0, 0, 0, 0.08);
+}
+
+.colaborador .topo-card {
+    border-radius: .5rem .5rem 0 0;
+}
+
+.topo-card img {
+    width: 80px;
+    border-radius: 200px;
+    position: relative;
+    bottom: -3rem;
+}
+
+.colaborador .fim-card {
+    background-color: #EEE;
+    border-radius: 0 0 .5rem .5rem;
+    padding-top: 3.5rem;
+    padding-bottom: .5rem;
+}
+
+.colaborador .fim-card h4{
+    font-size: 1rem;
+    line-height: .2rem;
+}
+
+.colaborador .fim-card h5{
+    color: #999;
+}
