@@ -29,6 +29,7 @@ const AreaTime = ({colaboradores, favoritaColaborador, deleteColaborador, mudarC
                                     key={indice}
                                     background={{backgroundColor: cor}}
                                     textColor={{color: cor}}
+                                    favorito={colaborador.favorito}
                                     nome={colaborador.nome}
                                     id={colaborador.id}
                                     funcao={colaborador.funcao}
