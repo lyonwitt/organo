@@ -3,46 +3,70 @@ import Formulario from './componentes/Formulario';
 import AreaTime from './componentes/AreaTime';
 import { useState } from 'react';
 import Rodape from './componentes/Rodape';
+import { v4 as uuidv4 } from 'uuid';
 
 function App(props) {
 
-  const listaTimes = [
+  const [listaTimes, setListaTimes] = useState([
         {
+          id: uuidv4(),
           nome: 'Next',
-          corPrimaria: '#859493',
-          corSecundaria: '#C7E3E1',
+          cor: '#468D88',
         },
         {
+          id: uuidv4(),
           nome: 'uReach',
-          corPrimaria: '#928463',
-          corSecundaria: '#F6E2B5',
+          cor: '#928463',
         }
-  ]
+  ])
 
   const [colaboradores, setColaboradores] = useState([])
 
-  const dadosNovoColaborador = (colaborador) => {
-      setColaboradores([...colaboradores, colaborador])
-      console.log(colaboradores)
+
+  function deletarColaborador (id) {
+    setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id ));
   }
+
+  function favoritarColaborador(id) {
+    setColaboradores(colaboradores.map(colaborador => {
+      if(colaborador.id === id) colaborador.favorito = !colaborador.favorito;
+      return colaborador;
+    }))
+  }
+
+  function mudarCorDoTime (cor, id) {
+    setListaTimes(listaTimes.map(time => {
+      if(time.id === id) {
+        time.cor = cor;
+      }
+      return time;
+    }));
+  }
+
+  
+  console.log(colaboradores)
 
   return (
     <div className="App">
       <Banner />
       <Formulario
         allTimes={listaTimes.map(time => time.nome)}
-        dadosEnviados = {colaborador => dadosNovoColaborador(colaborador)}
-        h2="Preencha os dados para criar o card do colaborador:"
+        dadosEnviados = {colaborador => setColaboradores([...colaboradores, colaborador])}
+        dadosNovoTime = {novoTime => setListaTimes([...listaTimes, novoTime])}
       />
 
       {listaTimes.map(
-        time => <AreaTime 
-                    key={time.nome} 
-                    titleTime={time.nome} 
-                    corPrimaria={time.corPrimaria} 
-                    corSecundaria={time.corSecundaria}
-                    colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
-                />
+        (time, indice) => <AreaTime
+                              mudarCor={mudarCorDoTime}
+                              key={indice}
+                              id={time.id}
+                              titleTime={time.nome} 
+                              corPrimaria={time.corPrimaria} 
+                              cor={time.cor}
+                              colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+                              deleteColaborador={deletarColaborador}
+                              favoritaColaborador={favoritarColaborador}
+                          />
       )}
 
       <Rodape />

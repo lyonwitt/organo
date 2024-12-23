@@ -1,11 +1,11 @@
-import './InputText.css';
+import './Input.css';
 
-const InputText = (props) => {
+const Input = (props) => {
     
     const placeholderModificado = `${props.placeholder}...`
 
     return (
-        <div className="campo-texto">
+        <div className="campo">
             <label>
                 {props.label}
             </label>
@@ -13,7 +13,7 @@ const InputText = (props) => {
                 valor={props.valor} 
                 onChange={evento => props.alterValue(evento.target.value)} 
                 required={props.obrigatorio} 
-                type="text" id='' 
+                type={props.tipo} id='' 
                 placeholder={placeholderModificado}
                 value={props.valor}
             />
@@ -22,4 +22,4 @@ const InputText = (props) => {
 
 }
 
-export default InputText
+export default Input

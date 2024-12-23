@@ -2,6 +2,7 @@
     max-width: 100vw;
     padding: .2rem 0;
     text-align: center;
+    position: relative;
 }
 
 h3 {
@@ -16,4 +17,10 @@ h3 {
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
+}
+
+.input-cor {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }

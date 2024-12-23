@@ -30,3 +30,28 @@
 .colaborador .fim-card h5{
     color: #999;
 }
+
+.deletar {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    color: #262524;
+    font-size: 1.2rem;
+    transition: ease .3s;
+    cursor: pointer
+}
+
+.deletar:hover {
+    opacity: .7;
+}
+
+.favoritar {
+    color: #262524;
+    font-size: 1.2rem;
+    transition: ease .3s;
+    cursor: pointer
+}
+
+.favoritar:hover {
+    opacity: .7;
+}

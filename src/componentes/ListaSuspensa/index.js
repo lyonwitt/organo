@@ -15,10 +15,10 @@ const ListaSuspensa = (props) => {
                 valor={props.valor} 
                 onChange={evento => props.alterValue(evento.target.value)} 
                 required={props.obrigatorio}
-                defaultValue=""
+                defaultValue=''
                 value={props.valor}
             >
-                <option value="" disabled>Selecione uma opção...</option>
+                <option value='' disabled>Selecione uma opção...</option>
                 {props.itens.map(item => <option key={item}>{item}</option>)}
             </select>
         </div>

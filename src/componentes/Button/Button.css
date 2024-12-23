@@ -1,16 +1,16 @@
 .button {
     width: 100%;
-   display: flex;
+    display: flex;
 }
 
 .button button {
-    width: 20%;
+    min-width: 20%;
     padding: .9rem;
     cursor: pointer;
 }
 
 .button .btn-first {
-    background-color: #928463;
+    background-color: #262524;
     border: none;
     color: #F8F8F8;
     font-weight: 600;
@@ -21,5 +21,5 @@
 }
 
 .button .btn-first:hover {
-    background-color: #262524;
+    background-color: #444;
 }
